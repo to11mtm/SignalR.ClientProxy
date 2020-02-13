@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.ClientProxy", "SignalR.ClientProxy\SignalR.ClientProxy.csproj", "{648101EF-E064-4CB4-A7D5-436F8F6E7724}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{648101EF-E064-4CB4-A7D5-436F8F6E7724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{648101EF-E064-4CB4-A7D5-436F8F6E7724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{648101EF-E064-4CB4-A7D5-436F8F6E7724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{648101EF-E064-4CB4-A7D5-436F8F6E7724}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
