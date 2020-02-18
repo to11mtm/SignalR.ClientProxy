@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.SignalR.Client;
 
-namespace SignalR.ClientProxy
+namespace GlutenFree.SignalR.ClientProxy
 {
 	/// <summary>
 	/// <b>Do not use the Concrete type as T at this time.</b>

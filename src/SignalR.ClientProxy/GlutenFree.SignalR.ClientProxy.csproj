@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>GlutenFree.SignalR.ClientProxy</PackageId>
+        <Title>SignalR Core Client Proxy Generator</Title>
+        <Authors>Gluten Free Solutions</Authors>
+        <Description>A Small Library to make Calling SignalR Core Servers and registering callbacks on clients painless.</Description>
+        <Copyright>Copyright 2020, Gluten Free Solutions</Copyright>
+        <PackageProjectUrl>https://github.com/to11mtm/SignalR.ProxyHelpers</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/to11mtm/SignalR.ProxyHelpers/blob/master/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/to11mtm/SignalR.ProxyHelpers</RepositoryUrl>
+        <RepositoryType>github</RepositoryType>
+        <PackageTags>signalr core proxy</PackageTags>
+        <PackageReleaseNotes>Initial Nuget Release</PackageReleaseNotes>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="3.1.1" />
+      <PackageReference Include="Sigil" Version="5.0.0" />
+    </ItemGroup>
+
+</Project>

@@ -1,6 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.ClientProxy", "SignalR.ClientProxy\SignalR.ClientProxy.csproj", "{648101EF-E064-4CB4-A7D5-436F8F6E7724}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlutenFree.SignalR.ClientProxy", "SignalR.ClientProxy\GlutenFree.SignalR.ClientProxy.csproj", "{648101EF-E064-4CB4-A7D5-436F8F6E7724}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_", "_", "{1A6DF1CD-84FD-4C1C-A137-A521A6AAC80B}"
+ProjectSection(SolutionItems) = preProject
+	..\README.md = ..\README.md
+EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.ProxyHelpers.IntegrationTest", "SignalR.ProxyHelpers.IntegrationTest\SignalR.ProxyHelpers.IntegrationTest.csproj", "{EC4F9F75-2D2E-4C64-9D38-2F76376A530E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.ProxyHelpers.Tests", "SignalR.ProxyHelpers.Tests\SignalR.ProxyHelpers.Tests.csproj", "{BC572897-0175-400D-90EC-CD6AF9E4773C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +21,13 @@ Global
 		{648101EF-E064-4CB4-A7D5-436F8F6E7724}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{648101EF-E064-4CB4-A7D5-436F8F6E7724}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{648101EF-E064-4CB4-A7D5-436F8F6E7724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC4F9F75-2D2E-4C64-9D38-2F76376A530E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC4F9F75-2D2E-4C64-9D38-2F76376A530E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC4F9F75-2D2E-4C64-9D38-2F76376A530E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC4F9F75-2D2E-4C64-9D38-2F76376A530E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC572897-0175-400D-90EC-CD6AF9E4773C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC572897-0175-400D-90EC-CD6AF9E4773C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC572897-0175-400D-90EC-CD6AF9E4773C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC572897-0175-400D-90EC-CD6AF9E4773C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

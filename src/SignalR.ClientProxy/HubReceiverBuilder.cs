@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR.Client;
 
-namespace SignalR.ClientProxy
+namespace GlutenFree.SignalR.ClientProxy
 {
     public class HubReceiverBuilder
     {
@@ -34,24 +35,16 @@ namespace SignalR.ClientProxy
                 new Dictionary<System.Reflection.MethodInfo, System.IDisposable
                 >();
 
-            //Can we stop for a second and talk about how this overload is hidden?
-            //It's the most useful one for building a proxy, but it's private.
-            var method = typeof(HubConnectionExtensions)
-                .GetMethod(name: "On",
-                    bindingAttr: BindingFlags.NonPublic | BindingFlags.Static,
-                    binder: null,
-                    types: new[]
-                    {
-                        typeof(HubConnection), typeof(string), typeof(Type[]),
-                        typeof(Action<object[]>)
-                    },
-                    modifiers: new ParameterModifier[] { });
 
             var m = typeof(T).GetMethods();
 
             //wire up each method.
             foreach (var me in m)
             {
+                //Do not Autowire non-task methods
+                //Technically they aren't allowed by the server anyway...
+                if (me.ReturnType != typeof(Task))
+                    continue;
                 //TODO: the client side currently uses a Compiled expression instead of an Emitted method.
                 //This is probably a little more readable,
                 //But it is not going to be quite as performant.
@@ -60,30 +53,22 @@ namespace SignalR.ClientProxy
                 var objArrArg = Expression.Parameter(typeof(object[]));
                 List<Expression> accessExprs = new List<Expression>();
 
-                var pars = me.GetParameters();
+                var pars = me.GetParameters().Select(r=>r.ParameterType).ToArray();
                 for (int i = 0; i < pars.Length; i++)
                 {
                     accessExprs.Add(Expression.Convert(
                         Expression.ArrayIndex(objArrArg,
-                            Expression.Constant(i)), pars[i].ParameterType));
+                            Expression.Constant(i)), pars[i]));
                 }
 
                 var mc = Expression.Call(mainArg, me, accessExprs);
-                var res =
-                    Expression.Lambda<Action<T, object[]>>(mc, mainArg,
-                        objArrArg);
+                //curriedInvoker
+                //hubConection.On("TMethod","MethodName", ParameterTypes, curriedInvokerInvoke)
+                var res = Expression.Lambda<Func<T,object[],Task>>(mc,mainArg, objArrArg);
                 var func = res.Compile();
-                Action<object[]> curried = (o) => func(instance, o);
-                results.Add(me,
-                    (IDisposable) method.Invoke(null,
-                        new object[]
-                        {
-                            conn, me.Name,
-                            me.GetParameters().Select(x => x.ParameterType)
-                                .ToArray(),
-                            curried
-                        }));
-
+                results.Add(me, conn.On(me.Name,
+                    pars,
+                    async (o) => await func(instance,o)));
             }
 
             return results;
