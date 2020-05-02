@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageVersion>2.0.0</PackageVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\GlutenFree.SignalR.ClientProxy.ExpressionBased\GlutenFree.SignalR.ClientProxy.ExpressionBased.csproj" />
+      <ProjectReference Include="..\GlutenFree.SignalR.ClientProxy.Sigil\GlutenFree.SignalR.ClientProxy.Sigil.csproj" />
+      <ProjectReference Include="..\GlutenFree.SignalR.ClientReceiver\GlutenFree.SignalR.ClientReceiver.csproj" />
+      <ProjectReference Include="..\SignalR.ClientProxy\GlutenFree.SignalR.ClientProxy.Core.csproj" />
+    </ItemGroup>
+
+</Project>

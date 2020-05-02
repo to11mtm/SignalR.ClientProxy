@@ -21,11 +21,20 @@ namespace SignalR.ProxyHelpers.IntegrationTest
     public static class TestHostbuilder
     {
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        public static IHostBuilder CreateHostBuilder(string[] args, int? port = null) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureWebHost(x =>
+                {
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    
+                    webBuilder.ConfigureKestrel(k =>
+                    {
+                        if (port != null)
+                        {
+                            k.ListenLocalhost(port.Value);
+                        }
+                    });
                     webBuilder.UseStartup<Startup>();
                 });        
     }

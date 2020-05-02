@@ -2,6 +2,12 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
+
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SignalR.ClientProxy\GlutenFree.SignalR.ClientProxy.Core.csproj" />
+    </ItemGroup>
 
 </Project>

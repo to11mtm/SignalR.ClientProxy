@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.0</TargetFramework>
-
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <IsPackable>false</IsPackable>
     </PropertyGroup>
 
@@ -18,7 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\SignalR.ClientProxy\GlutenFree.SignalR.ClientProxy.csproj" />
+      <ProjectReference Include="..\GlutenFree.SignalR.ClientProxy\GlutenFree.SignalR.ClientProxy.csproj" />
       <ProjectReference Include="..\SignalR.ProxyHelpers.IntegrationTest\SignalR.ProxyHelpers.IntegrationTest.csproj" />
     </ItemGroup>
 

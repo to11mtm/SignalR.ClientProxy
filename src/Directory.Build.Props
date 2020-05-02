@@ -1,0 +1,21 @@
+<Project>
+    <PropertyGroup>
+        <AssemblyVersion>2.0.00</AssemblyVersion>
+        <FileVersion>2.00.00</FileVersion>
+        <Version>2.0.00</Version>
+        <Authors>Gluten Free Solutions</Authors>
+        <Description>Part of a small Library to make Calling SignalR Core Servers and registering callbacks on clients painless.</Description>
+        <Copyright>Copyright 2020, Gluten Free Solutions</Copyright>
+        <PackageProjectUrl>https://github.com/to11mtm/SignalR.ProxyHelpers</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/to11mtm/SignalR.ProxyHelpers/blob/master/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/to11mtm/SignalR.ProxyHelpers</RepositoryUrl>
+        <RepositoryType>github</RepositoryType>
+        <PackageTags>signalr core proxy</PackageTags>
+        <PackageReleaseNotes>Added Invoke and Streaming Support. Full Streaming Support for IL Generated proxies and partial support for Expression proxies. Split into sections w/Metapackage</PackageReleaseNotes>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+        <PropertyGroup>
+            <PackageOutputPath>$(SolutionDir)\packedNuget</PackageOutputPath>    
+        </PropertyGroup>
+    
+</Project>

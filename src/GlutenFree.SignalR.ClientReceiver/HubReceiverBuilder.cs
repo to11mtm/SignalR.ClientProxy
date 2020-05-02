@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR.Client;
 
-namespace GlutenFree.SignalR.ClientProxy
+namespace GlutenFree.SignalR.ClientReceiver
 {
     public class HubReceiverBuilder
     {
@@ -20,7 +20,7 @@ namespace GlutenFree.SignalR.ClientProxy
         /// <see cref="HubReceiverContainer{T}"/>
         /// <b> You Specify use the interface type and not a concrete class as T </b>
         /// </summary>
-        /// <param name="conn">The Hub Connection</param>
+        /// <param name="instance">The Hub Connection</param>
         /// <param name="instance"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns>A Dictionary of Disposables for each MethodInfo hooked.</returns>
@@ -62,6 +62,7 @@ namespace GlutenFree.SignalR.ClientProxy
                 }
 
                 var mc = Expression.Call(mainArg, me, accessExprs);
+                
                 //curriedInvoker
                 //hubConection.On("TMethod","MethodName", ParameterTypes, curriedInvokerInvoke)
                 var res = Expression.Lambda<Func<T,object[],Task>>(mc,mainArg, objArrArg);

@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <PackageId>GlutenFree.SignalR.ClientProxy.Core</PackageId>
+        <Title>SignalR Core Client Proxy Core attributes</Title>
+        <Authors>Gluten Free Solutions</Authors>
+        <RootNamespace>GlutenFree.SignalR.ClientProxy</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="3.1.1" />
+    </ItemGroup>
+
+</Project>
